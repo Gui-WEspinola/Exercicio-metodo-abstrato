@@ -2,28 +2,33 @@ package entities;
 
 public class LegalPerson extends TaxPayer{
 
-    private double worker;
+    private double EmployeeCount;
 
-    public LegalPerson(String name, Double income, double worker) {
+    public LegalPerson(String name, Double income, double EmployeeCount) {
         super(name, income);
-        this.worker = worker;
+        this.EmployeeCount = EmployeeCount;
     }
 
-    public double getWorker() {
-        return worker;
+    public double getEmployeeCount() {
+        return EmployeeCount;
     }
 
-    public void setWorker(double worker) {
-        this.worker = worker;
+    public void setEmployeeCount(double employeeCount) {
+        this.EmployeeCount = employeeCount;
     }
 
     @Override
     public double totalTax() {
-        if (worker > 10){
+        if (EmployeeCount > 10){
             return income * 0.14;
         }
         else {
             return income * 0.16;
         }
+    }
+    public String toString() {
+        return getName() +
+                ": $ " +
+                String.format("%.2f", totalTax());
     }
 }
