@@ -3,13 +3,13 @@ package entities;
 public abstract class TaxPayer {
 
     private String name;
-    private String income;
+    protected Double income;
 
 
     public TaxPayer() {
     }
 
-    public TaxPayer(String name, String income) {
+    public TaxPayer(String name, Double income) {
         this.name = name;
         this.income = income;
     }
@@ -22,11 +22,11 @@ public abstract class TaxPayer {
         this.name = name;
     }
 
-    public String getIncome() {
+    public Double getIncome() {
         return income;
     }
 
-    public void setIncome(String income) {
+    public void setIncome(Double income) {
         this.income = income;
     }
 
